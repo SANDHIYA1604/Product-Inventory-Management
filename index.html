@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Product Inventory Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="logo"><span>📦</span><h2>Inventory</h2></div>
+    <nav>
+      <a class="nav-btn" href="index.html">🏠 Dashboard</a>
+      <a class="nav-btn" href="products.html">📦 Products</a>
+      <a class="nav-btn" href="stock.html">🔄 Stock</a>
+      <a class="nav-btn" href="suppliers.html">🚚 Suppliers</a>
+    </nav>
+    <button class="nav-btn logout-btn" id="logoutBtn">🚪 Logout</button>
+  </aside>
+
+  <main class="main">
+
+    <header class="header">
+      <div>
+        <h1>Product Inventory Management</h1>
+        <p>Manage your products and stock easily</p>
+      </div>
+      <div class="date" id="currentDate"></div>
+    </header>
+
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div><p>Total Products</p><h2 id="totalProducts">0</h2></div>
+        <span class="card-icon">📦</span>
+      </div>
+      <div class="card">
+        <div><p>Total Stock</p><h2 id="totalStock">0</h2></div>
+        <span class="card-icon">📊</span>
+      </div>
+      <div class="card warning">
+        <div><p>Low Stock</p><h2 id="lowStock">0</h2></div>
+        <span class="card-icon">⚠️</span>
+      </div>
+      <div class="card danger">
+        <div><p>Out of Stock</p><h2 id="outStock">0</h2></div>
+        <span class="card-icon">❌</span>
+      </div>
+    </div>
+
+    <div class="value-box">
+      <div><p>Total Inventory Value</p><h2 id="inventoryValue">₹0</h2></div>
+      <span>💰</span>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header"><h3>Low Stock Products</h3></div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>Product</th><th>Category</th><th>Quantity</th><th>Minimum Stock</th><th>Status</th></tr>
+          </thead>
+          <tbody id="lowStockTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

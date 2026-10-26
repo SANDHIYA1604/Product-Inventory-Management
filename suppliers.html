@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suppliers - Product Inventory Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="logo"><span>📦</span><h2>Inventory</h2></div>
+    <nav>
+      <a class="nav-btn" href="index.html">🏠 Dashboard</a>
+      <a class="nav-btn" href="products.html">📦 Products</a>
+      <a class="nav-btn" href="stock.html">🔄 Stock</a>
+      <a class="nav-btn" href="suppliers.html">🚚 Suppliers</a>
+    </nav>
+    <button class="nav-btn logout-btn" id="logoutBtn">🚪 Logout</button>
+  </aside>
+
+  <main class="main">
+
+    <header class="header">
+      <div>
+        <h1>Product Inventory Management</h1>
+        <p>Manage your products and stock easily</p>
+      </div>
+      <div class="date" id="currentDate"></div>
+    </header>
+
+    <div class="section-header">
+      <div><h2>Suppliers</h2><p>Supplier information</p></div>
+    </div>
+
+    <div class="supplier-grid" id="supplierGrid"></div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

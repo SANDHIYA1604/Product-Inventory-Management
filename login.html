@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Product Inventory Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 50%, #a21caf 100%);
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  }
+  .login-card {
+    background: #fff;
+    width: 380px;
+    max-width: 90%;
+    padding: 36px 32px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    text-align: center;
+  }
+  .login-card .logo-icon {
+    font-size: 42px;
+    margin-bottom: 6px;
+  }
+  .login-card h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    background: linear-gradient(90deg, #4f46e5, #c026d3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .login-card p.subtitle {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+  .login-card label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #4338ca;
+    margin-top: 8px;
+  }
+  .login-card input {
+    padding: 11px 13px;
+    border: 2px solid #e0e7ff;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+  }
+  .login-card input:focus { border-color: #a855f7; }
+  .login-btn {
+    margin-top: 18px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 9px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+  }
+  .login-btn:hover { filter: brightness(1.08); }
+  .login-error {
+    color: #be123c;
+    background: #fee2e2;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 10px;
+    display: none;
+  }
+  .login-hint {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="logo-icon">📦</div>
+    <h1>Inventory Login</h1>
+    <p class="subtitle">Sign in to manage your product inventory</p>
+
+    <form id="loginForm">
+      <label>Username</label>
+      <input type="text" id="loginUsername" placeholder="Enter username" required autofocus>
+
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter password" required>
+
+      <button type="submit" class="login-btn">Login</button>
+      <div class="login-error" id="loginError">Invalid username or password.</div>
+    </form>
+
+    <p class="login-hint">Demo credentials: admin / admin123</p>
+  </div>
+</div>
+
+<script>
+  // Simple hardcoded check — fine for a college mini project (no real backend).
+  const VALID_USERNAME = "admin";
+  const VALID_PASSWORD = "admin123";
+
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("loginUsername").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+    const errorBox = document.getElementById("loginError");
+
+    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+      localStorage.setItem("isLoggedIn", "true");
+      location.href = "index.html";
+    } else {
+      errorBox.style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>

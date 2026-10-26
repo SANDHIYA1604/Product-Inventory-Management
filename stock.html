@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock - Product Inventory Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="logo"><span>📦</span><h2>Inventory</h2></div>
+    <nav>
+      <a class="nav-btn" href="index.html">🏠 Dashboard</a>
+      <a class="nav-btn" href="products.html">📦 Products</a>
+      <a class="nav-btn" href="stock.html">🔄 Stock</a>
+      <a class="nav-btn" href="suppliers.html">🚚 Suppliers</a>
+    </nav>
+    <button class="nav-btn logout-btn" id="logoutBtn">🚪 Logout</button>
+  </aside>
+
+  <main class="main">
+
+    <header class="header">
+      <div>
+        <h1>Product Inventory Management</h1>
+        <p>Manage your products and stock easily</p>
+      </div>
+      <div class="date" id="currentDate"></div>
+    </header>
+
+    <div class="section-header">
+      <div><h2>Stock Management</h2><p>Move stock in and out</p></div>
+    </div>
+
+    <div class="stock-grid">
+      <div class="stock-card">
+        <h3>📥 Stock In</h3>
+        <p>Add new stock to a product</p>
+        <select id="stockInProduct"></select>
+        <input type="number" id="stockInQuantity" placeholder="Quantity" min="1">
+        <button class="success-btn" id="stockInBtn">Add Stock</button>
+      </div>
+
+      <div class="stock-card">
+        <h3>📤 Stock Out</h3>
+        <p>Remove stock from a product</p>
+        <select id="stockOutProduct"></select>
+        <input type="number" id="stockOutQuantity" placeholder="Quantity" min="1">
+        <button class="danger-btn" id="stockOutBtn">Remove Stock</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
